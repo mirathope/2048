@@ -396,6 +396,179 @@ hr {
           font-size: 15px;
         }
       }
+
+      html, body {
+        background: #f7eedb;
+        color: #4a2521;
+      }
+
+      body {
+        position: relative;
+        background: repeating-linear-gradient(
+          90deg,
+          #f7eedb 0,
+          #f7eedb 36px,
+          #b9272d 36px,
+          #b9272d 72px
+        );
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        z-index: 200;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 34px;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 10px 19px, #ffe98a 0 4px, #b9272d 5px 6px, transparent 7px) 0 0 / 40px 34px repeat-x,
+          radial-gradient(circle at 30px 21px, #8ee6f0 0 4px, #254b9a 5px 6px, transparent 7px) 0 0 / 40px 34px repeat-x,
+          linear-gradient(176deg, transparent 0 14px, #482c27 15px 17px, transparent 18px);
+      }
+
+      .container {
+        position: relative;
+        z-index: 1;
+        padding: 18px;
+        border: 3px solid #e4b943;
+        border-radius: 12px;
+        background: rgba(255, 249, 234, 0.94);
+        box-shadow: 0 8px 0 rgba(87, 30, 25, 0.24);
+      }
+
+      .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      h1.title {
+        float: none;
+        color: #b9272d;
+        font-family: "Rye", Georgia, serif;
+        font-size: 43px;
+        line-height: 1.15;
+        text-align: center;
+        text-shadow: 2px 3px 0 #f1ce67, 4px 5px 0 #68251f;
+      }
+
+      .scores-container {
+        float: none;
+        text-align: center;
+      }
+
+      .score-container, .best-container {
+        background: #254b9a;
+        border: 2px solid #e4b943;
+        border-radius: 8px;
+        color: #fff7df;
+      }
+
+      .score-container:after, .best-container:after {
+        color: #f4d36a;
+      }
+
+      .game-intro, .game-explanation, .container > p {
+        color: #4a2521;
+      }
+
+      a {
+        color: #a51f29;
+      }
+
+      .restart-button,
+      .game-container .game-message a {
+        background: #b9272d;
+        border: 2px solid #e4b943;
+        border-radius: 5px;
+        color: #fff7df;
+        box-shadow: 0 3px 0 #752027;
+      }
+
+      .game-container {
+        background: #254b9a;
+        border: 7px solid #e4b943;
+        border-radius: 18px;
+        box-shadow: 0 0 0 4px #a51f29, 0 8px 0 4px rgba(87, 30, 25, 0.28);
+      }
+
+      .grid-cell {
+        border-radius: 8px;
+        background: rgba(255, 247, 223, 0.28);
+      }
+
+      .tile .tile-inner {
+        border: 3px solid #f1ce67;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-family: "Rye", Georgia, serif;
+        text-shadow: 1px 2px 0 rgba(61, 25, 22, 0.32);
+      }
+
+      .tile.tile-2 .tile-inner,
+      .tile.tile-16 .tile-inner,
+      .tile.tile-128 .tile-inner,
+      .tile.tile-1024 .tile-inner {
+        color: #fff7df;
+        background: #c62832;
+      }
+
+      .tile.tile-4 .tile-inner,
+      .tile.tile-32 .tile-inner,
+      .tile.tile-256 .tile-inner {
+        color: #4a2521;
+        background: #ffd447;
+      }
+
+      .tile.tile-8 .tile-inner,
+      .tile.tile-64 .tile-inner,
+      .tile.tile-512 .tile-inner {
+        color: #fff7df;
+        background: #2454ad;
+      }
+
+      .tile.tile-128 .tile-inner,
+      .tile.tile-256 .tile-inner,
+      .tile.tile-512 .tile-inner,
+      .tile.tile-1024 .tile-inner,
+      .tile.tile-2048 .tile-inner {
+        box-shadow: 0 0 20px 5px rgba(255, 216, 75, 0.75), inset 0 0 0 2px #fff0a6;
+      }
+
+      .tile.tile-2048 .tile-inner,
+      .tile.tile-super .tile-inner {
+        color: #4a2521;
+        background: linear-gradient(135deg, #fff1a2, #edb936 55%, #fff8cc);
+        border-color: #fff1a2;
+        text-shadow: 1px 2px 0 rgba(255, 255, 255, 0.65);
+      }
+
+      @media screen and (max-width: 520px) {
+        body {
+          margin-top: 48px;
+        }
+
+        .container {
+          width: 280px;
+          padding: 12px;
+        }
+
+        h1.title {
+          font-size: 29px;
+          line-height: 1.2;
+          margin-top: 8px;
+        }
+
+        .scores-container {
+          text-align: center;
+        }
+
+        .game-container {
+          border-width: 5px;
+        }
+      }
     }
 
     $exponent: $exponent + 1;
